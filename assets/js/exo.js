@@ -107,7 +107,7 @@ const displaymovieFetch = movieFetch
                 ${FullViewedContent}
                 </div>
                 <div class="col-lg-3 d-flex align-items-center justify-content-center mt-1 ms-lg-2">
-                    <a class="btn btn-dark fs-4 px-4" href="fiche-film.html?id=${movie._id}" role="button">En savoir +</a>
+                    <a class="btn btn-dark fs-4 px-4" href="html/fiche-film.html?id=${movie._id}" role="button">En savoir +</a>
                 </div>
             </div>
         </div>
