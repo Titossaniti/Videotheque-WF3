@@ -1,0 +1,107 @@
+.textjustify{
+    text-align: justify;
+}
+.filmimg{
+    height : 23rem;
+}
+.ficheFilmImg{
+height: 100%;
+}
+h3{
+    font-size: 2rem;
+}
+.backdrop{
+    backdrop-filter: blur(10px);
+    border-bottom: #dbdbdba8 2px solid;
+}
+#logo{
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
+}
+.site-search{
+    border: none;
+    border-radius: 50% 50%;
+    background: #F0F0F0;
+    color:#212529;
+}
+.rechercher{
+    border: none;
+    background: #F0F0F0;
+    color: #212529;
+    border-radius: 25px;
+}
+.borderfooter{
+    border-top: #dbdbdba8 2px solid;
+}
+#banner{
+    height: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(144,138,123,1) 27%, rgba(103,91,62,1) 52%, rgba(102,85,42,1) 100%);
+
+}
+/*media query pour width>1200*/
+@media screen and (min-width: 1200px) {
+    .roundedImg{
+        border-radius: 7px 0 0 7px;
+    }
+    .roundedFilmBloc{
+        border-radius: 0 7px 7px 0;
+    }
+}
+/*media query pour 992<width<1200*/
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .filmimg{
+        height: auto;
+    }
+    .roundedImg{
+        border-radius: 7px 0 0 7px;
+    }
+    .roundedFilmBloc{
+        border-radius: 0 7px 7px 0;
+    }
+    #cardTextSize{
+        font-size: 10px;
+    }
+    #divinfo{
+        font-size: 1vw;
+    }
+}
+/*media query pour 576<width<991*/
+@media screen and (max-width: 991px) and (min-width: 576px){
+    .roundedImg{
+        border-radius: 7px;
+    }
+    .roundedFilmBloc{
+        border-radius: 7px;
+    }
+    .ficheFilmImg{
+        margin-bottom: 3vw;
+        height:60vw;
+        width:50vw;
+    }
+    .filmimg{
+        height: 70vw;
+    }
+    .roundedImg{
+        margin: auto;
+    }
+    .roundedFilmBloc{
+        margin: 4vw auto;
+    }
+}
+/*media query pour width<575 */
+@media screen and (max-width: 575px){
+    .roundedImg{
+        border-radius: 7px;
+        margin: auto;
+    }
+    .roundedFilmBloc{
+        border-radius: 7px;
+        margin: 2vw auto; 
+    }
+    .filmimg{
+        height: 100vw;
+    }
+    .blocfilm{
+        margin: auto;
+    }
+}

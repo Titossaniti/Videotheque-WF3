@@ -4,7 +4,7 @@ console.log(myFilmId);
 
 
 
-const movieFetchFicheFilm = fetch(`http://localhost:3000/api/movies/${myFilmId}`);
+const movieFetchFicheFilm = fetch(`https://quaint-tan-bull.cyclic.app/api/movies/${myFilmId}`);
 
 
 let fichefilmHTML = "";
@@ -19,22 +19,18 @@ const displaymovieFetchFicheFilm = movieFetchFicheFilm
 .then((ficheFilm) => {
     
     if (ficheFilm.Duration === ficheFilm.TimeWatched) {
-
-        FullViewed = true;
         FullViewedContent = `<p class="fw-bold text-end fs-4">Vous avez déjà vu ce film<i class="fa-solid fa-check ps-4 text-success"></i></p>`;
     }
     else {
-    
-        FullViewed = false;
         FullViewedContent = `<p class="fw-bold text-end fs-4">Vous n'avez pas terminé ce film<i class="fa-solid fa-play  ps-4"></i></p>`;
     }
 
 
     fichefilmHTML = `
-    <div class="col-lg-4 col-md-12 text-sm-center text-lg-start">
-    <img src="/Javascript/exerciceJS/img/${ficheFilm.imageURL}" height=500vw width=auto class="rounded border">
+    <div class="col-lg-4 col-md-12 d-flex justify-content-md-center">
+    <img src="${ficheFilm.imageURL}" width=100% class="roundedImg ficheFilmImg">
 </div>
-<div class="col-lg-8 row border border-dark rounded">
+<div class="col-lg-8 row border border-dark roundedFilmBloc">
     <h1 class="fw-bold display-2">${ficheFilm.Title}</h1>
     <div class="col-8">
         <p><span class="fw-semibold">Réalisé par :</span> ${ficheFilm.Filmmaker}</p>
@@ -50,11 +46,11 @@ const displaymovieFetchFicheFilm = movieFetchFicheFilm
         <h2 class="fs-4 text-decoration-underline">Synopsis</h2>
         <p class="textjustify">${ficheFilm.Description}</placeat></p>
     </div>
-<div class="col-12 py-2">
-    <div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-label="Animated striped example" aria-valuenow="${Math.round((ficheFilm.TimeWatched/ficheFilm.Duration)*100)}" aria-valuemin="0" aria-valuemax="100" style="width: ${Math.round((ficheFilm.TimeWatched/ficheFilm.Duration)*100)}%"></div>
+    <div class="col-12 py-2">
+        <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-label="Animated striped example" aria-valuenow="${Math.round((ficheFilm.TimeWatched/ficheFilm.Duration)*100)}" aria-valuemin="0" aria-valuemax="100" style="width: ${Math.round((ficheFilm.TimeWatched/ficheFilm.Duration)*100)}%"></div>
+        </div>
     </div>
-</div>
 </div>
 
 <div class="col-12 pt-5">
@@ -72,20 +68,3 @@ document.getElementById("fichefilm").innerHTML = fichefilmHTML;
 .catch(function(err){
   console.log(err);
 })
-
-
-/*
-*/
-
-/*
-
-
-//let fichefilmHTML ="";
-
-
-   
-
-
-    
-
-    */

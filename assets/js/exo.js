@@ -40,7 +40,7 @@ let Movies = [movie7,movie8,movie9,movie3,movie4,movie5,movie6,movie1,movie2];
 */
 let htmlElements ="";
 
-const movieFetch = fetch("http://localhost:3000/api/movies");
+const movieFetch = fetch("https://quaint-tan-bull.cyclic.app/api/movies");
 
 const displaymovieFetch = movieFetch
 .then(function(res){
@@ -55,22 +55,22 @@ const displaymovieFetch = movieFetch
 
         if (movie.Duration === movie.TimeWatched) {
 
-            FullViewed = true;
+
             FullViewedContent = `<p class="fw-bold text-center pt-2">Film vu</p>
                                 <p class="text-center text-success"><i class="fa-solid fa-check"></i></p>`;
         }
         else {
 
-            FullViewed = false;
+
             FullViewedContent = `<p class="fw-bold text-center pt-2">Film non terminé</p>
                                 <p class="text-center"><i class="fa-solid fa-play"></i></p>`;
         }
 
-        htmlElements += `<div class="row px-3 my-5 border border-dark border-opacity-25 rounded shadow pb-4">
+        htmlElements += `<div class="blocfilm row px-3 my-5 border border-dark border-opacity-25 rounded shadow pb-4">
         <div id="divfilm" class="col-lg-3 py-1 my-3">
             <div class="card">
-                <img src="img/${movie.imageURL}" class="filmimg card-img-top" alt="Affiche du film ${movie.Title}">
-                <div class="row card-body">
+                <img src="${movie.imageURL}" class="filmimg card-img-top" alt="Affiche du film ${movie.Title}">
+                <div id="cardTextSize" class="row card-body">
                   <div class="col-lg-9 fw-light text-start">De <span class="fs-5 fw-semibold">${movie.Filmmaker}</span></div>
                   <div class="col-lg-3 fw-light text-end fw-semibold">${movie.Year}</div>
                 </div>
@@ -91,23 +91,23 @@ const displaymovieFetch = movieFetch
                 </div>
             </div>
             <div id="divinfo" class="row mt-2">
-                <div class="col-lg-2 border border-opacity-50 rounded text-center">
+                <div class="col-lg-2 border border-opacity-50 rounded text-center mt-1">
                     <p class="fw-bold mt-2">Durée</p>
                     <p>${DurationInHour}</p>
                 </div>
-                <div class="col-lg-2 border border-opacity-50 rounded ms-3 text-center">
+                <div class="col-lg-2 border border-opacity-50 rounded ms-lg-3 text-center mt-1">
                     <p class="fw-bold mt-2">Temps regardé</p>
                     <p>${movie.TimeWatched} minutes</p>
                 </div>
-                <div class="col-lg-2 border border-opacity-50 rounded ms-3 text-center">
+                <div class="col-lg-2 border border-opacity-50 rounded ms-lg-3 text-center mt-1">
                 <p class="fw-bold mt-2">Visionné à</p>
                 <p>${Math.round((movie.TimeWatched/movie.Duration)*100)} %</p>
                 </div>
-                <div class="col-lg-2 border border-opacity-50 rounded ms-3">
+                <div class="col-lg-2 border border-opacity-50 rounded ms-lg-3  mt-1">
                 ${FullViewedContent}
                 </div>
-                <div class="col-lg-3 d-flex align-items-center ms-2">
-                    <a class="btn btn-dark fs-4" href="fiche-film.html?id=${movie._id}" role="button">En savoir +</a>
+                <div class="col-lg-3 d-flex align-items-center justify-content-center mt-1 ms-lg-2">
+                    <a class="btn btn-dark fs-4 px-4" href="fiche-film.html?id=${movie._id}" role="button">En savoir +</a>
                 </div>
             </div>
         </div>
